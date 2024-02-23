@@ -1,0 +1,80 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Students",
+    "dateExported": "2024-02-23T17:48:32.051Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2048430b-4941-4b79-bcd0-7b61a7a929f1",
+            "colId": "18f610a6-9d2e-49b9-b19f-32141d72a986",
+            "containerId": "",
+            "name": "studentsPost",
+            "url": "http://localhost:3000/api/student",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-23T14:30:58.695Z",
+            "modified": "2024-02-23T17:28:48.186Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Uriel11\",\n  \"correo\": \"Uriel11@kinal.edu.gt\",\n  \"password\" : \"123456\",\n  \"asignatura\" : []\n} ",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ff7e48be-9df3-4268-932f-bcae45db38a3",
+            "colId": "18f610a6-9d2e-49b9-b19f-32141d72a986",
+            "containerId": "",
+            "name": "studentsPut",
+            "url": "http://localhost:3000/api/student/65d0097fdd7c1965e3681884",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-23T14:30:58.698Z",
+            "modified": "2024-02-23T14:30:58.698Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\" : \"Digo Ramirez\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7733256b-ca55-4e36-bdbb-9f19d8fe4671",
+            "colId": "18f610a6-9d2e-49b9-b19f-32141d72a986",
+            "containerId": "",
+            "name": "studentsDelete",
+            "url": "http://localhost:3000/api/student/65d8d0375842c5e3fa9864fb",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-02-23T14:30:58.699Z",
+            "modified": "2024-02-23T17:12:33.741Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ad4f8104-b1d3-4620-9529-df13fc0a2969",
+            "colId": "18f610a6-9d2e-49b9-b19f-32141d72a986",
+            "containerId": "",
+            "name": "asignarCursosPut",
+            "url": "http://localhost:3000/api/student/65d8d5d0c480d4c02b07a2aa",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-02-23T17:40:24.564Z",
+            "modified": "2024-02-23T17:44:22.538Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"asignatura\" : [\"Matematica\", \"Aleman\",\"Ingles\"]\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
