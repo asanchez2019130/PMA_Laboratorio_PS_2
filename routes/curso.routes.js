@@ -11,14 +11,6 @@ const router = Router();
 
 router.get("/", cursoGet)
 
-router.get(
-    "/:id",
-    [
-        check("id", "El id no es un formato valido MongoDB").isMongoId(),
-        check("id").custom(existeCurso),
-        validarCampos
-    ], getCursosByid);
-
 router.put(
     "/:id",
     [
