@@ -1,10 +1,10 @@
 const { response, json } = require('express');
 const bcryptjs = require('bcryptjs');
 const Student = require('../models/students');
+const { validarCursos, validarCursosDuplicados, validarCursosExistentes } = require('../middlewares/validar-cursos');
 
 const studentPost = async (req, res) => {
     const { nombre, correo, password, asignatura } = req.body;
-
     const student = new Student({ nombre, correo, password, asignatura });
 
     const salt = bcryptjs.genSaltSync();
@@ -51,7 +51,7 @@ const asignarCursosPut = async (req, res) => {
     const student = await Student.findOne({ _id: id });
 
     res.status(200).json({
-        msg : 'Asignado a cursos exitosamente',
+        msg: 'Asignado a cursos exitosamente',
         student
     })
 

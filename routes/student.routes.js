@@ -13,7 +13,7 @@ router.put(
     [
         check("id", "El id no es un formato valido de MongoDB").isMongoId(),
         check("id").custom(existeStudentById),
-        validarCampos
+        validarCursos
     ], studentsPut);
 
 
@@ -30,7 +30,7 @@ router.delete(
     [
         check("id", "El id no es un formato valido de MongoDB").isMongoId(),
         check("id").custom(existeStudentById),
-        validarCampos
+        validarCursos
     ], studentDelete);
 
 router.post(
@@ -38,7 +38,7 @@ router.post(
     [
         check("nombre", "El nombre es obligatorio").not().isEmpty(),
         check("password", "el password debe de ser mayor a 6 caracteres").isLength({ min: 6 }),
-        check("asignatura", "Asignaturas es obligatorio"),
+        //check("asignatura", "Asignaturas es obligatorio"),
         check("correo", "Este no es un correo valido").isEmail(),
         check("correo").custom(existeStudent),
         validarCampos
