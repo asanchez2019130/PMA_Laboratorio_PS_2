@@ -1,5 +1,6 @@
 const { response, json } = require('express');
 const Cursos = require('../models/cursos');
+const Student = require('../models/students')
 
 const cursoGet = async (req, res = response) => {
     const { limite, desde } = req.query;
@@ -43,8 +44,21 @@ const cursosPut = async (req, res) => {
     const { id } = req.params;
     const { _id, ...resto } = req.body;
 
-    await Cursos.findByIdAndUpdate(id, resto);
 
+    await Cursos.findByIdAndUpdate(id, resto);
+    /*
+        try {
+            await Student.updateMany(
+                { 'asignatura': id }, // Filtrar por asignaturas que tengan el nombre del curso que estamos editando
+                { $set: { 'asignatura.$[elem]': nombre } }, // Actualizar el nombre del curso en el array
+                { arrayFilters: [{ 'elem': id }] }
+            );
+        } catch (error) {
+            console.error('Error al actualizar asignaturas en estudiantes:', error);
+            // Manejar el error según sea necesario
+            return res.status(500).json({ error: 'Error interno del servidor al actualizar asignaturas en estudiantes.' });
+        }
+    */
     const cursos = await Cursos.findOne({ _id: id });
 
     res.status(200).json({
